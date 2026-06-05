@@ -1,6 +1,6 @@
-# Xiaocui Zheng — Personal Academic Website
+# Xiaocui Zheng, Ph.D. — Personal Academic Website
 
-Personal academic website for **Xiaocui Zheng (郑小翠)**, Ph.D. candidate in Chemical Biology at Nanjing University.
+Personal academic website for **Dr. Xiaocui Zheng (郑小翠)**, Ph.D. in Chemical Biology (Nanjing University, 2026). Currently seeking postdoctoral positions.
 
 **Live site:** https://eliochen.github.io/xiaocui-website/
 
@@ -31,9 +31,9 @@ Single-page static HTML — no build tools or frameworks required. Deployed via 
 
 ```
 xiaocui-website/
-├── index.html                      # Main page (edit this to update content)
-├── avatar.jpg                      # Profile photo
-├── Xiaocui Zheng-CV-20260605.docx  # CV download
+├── index.html                     # Main page (edit this to update content)
+├── avatar.jpg                     # Profile photo
+├── Xiaocui Zheng-CV-20260605.pdf  # CV download (PDF)
 └── README.md
 ```
 
