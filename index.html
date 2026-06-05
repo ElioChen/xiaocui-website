@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaocui Zheng | Chemical Biology · Glycan Engineering</title>
+  <meta name="description" content="Ph.D. in Chemical Biology, Nanjing University — Glycoenzyme Engineering, Precision Glycan Editing, Bioorthogonal Chemistry." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:  #0d7a6e;
+      --teal2: #0f9688;
+      --navy:  #0d2b3e;
+      --g50:   #f7faf9;
+      --g100:  #eef4f2;
+      --g200:  #d8e8e4;
+      --g400:  #8daaa4;
+      --g500:  #5e8278;
+      --g600:  #3d6358;
+      --g800:  #1a2e2a;
+      --r:     12px;
+      --sh:    0 2px 12px rgba(0,0,0,.07);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; color:var(--g800); background:#fff; line-height:1.6; }
+    a { color:var(--teal2); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* ── Nav ── */
+    nav {
+      position:sticky; top:0; z-index:100;
+      background:rgba(255,255,255,.95); backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--g200);
+    }
+    .nav-inner {
+      max-width:1040px; margin:0 auto; padding:0 2rem;
+      height:54px; display:flex; align-items:center; justify-content:space-between;
+    }
+    .nav-brand { font-weight:700; font-size:.9rem; color:var(--navy); }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:.85rem; font-weight:500; color:var(--g500); transition:color .2s; }
+    .nav-links a:hover { color:var(--teal2); text-decoration:none; }
+
+    /* ── Hero ── */
+    #hero { background:#fff; border-bottom:1px solid var(--g200); padding:5rem 2rem 4.5rem; }
+    .hero-inner { max-width:1040px; margin:0 auto; display:flex; align-items:center; gap:3rem; }
+    .avatar {
+      flex-shrink:0; width:140px; height:140px; border-radius:50%;
+      border:3px solid var(--g200); box-shadow:0 4px 24px rgba(0,0,0,.12);
+      object-fit:cover;
+    }
+    .hero-text h1 {
+      font-family:'Lora',serif; font-size:2.5rem; font-weight:600;
+      letter-spacing:-.4px; color:var(--navy); line-height:1.15; margin-bottom:.35rem;
+    }
+    .hero-sub { font-size:.95rem; color:var(--g500); font-weight:500; margin-bottom:.25rem; }
+    .hero-loc { font-size:.85rem; color:var(--g400); margin-bottom:1.3rem; }
+    .hero-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.5rem; }
+    .tag {
+      background:var(--g100); border:1px solid var(--g200);
+      color:var(--g600); padding:.2rem .7rem; border-radius:999px;
+      font-size:.76rem; font-weight:500;
+    }
+    .social-links { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .soc {
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.38rem .85rem; border-radius:7px;
+      font-size:.8rem; font-weight:600; color:var(--g600);
+      border:1.5px solid var(--g200); background:#fff;
+      text-decoration:none; transition:all .18s; white-space:nowrap;
+    }
+    .soc svg { width:14px; height:14px; flex-shrink:0; }
+    .soc:hover { border-color:var(--teal2); color:var(--teal2); text-decoration:none; background:var(--g50); }
+    .soc.primary { background:var(--teal); color:#fff; border-color:var(--teal); }
+    .soc.primary:hover { background:#0a6358; border-color:#0a6358; }
+    .soc.cv { background:var(--navy); color:#fff; border-color:var(--navy); }
+    .soc.cv:hover { background:#0f3a55; border-color:#0f3a55; }
+
+    /* ── Sections ── */
+    section { padding:4rem 2rem; }
+    .wrap { max-width:1040px; margin:0 auto; }
+    .eyebrow { font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal2); margin-bottom:.3rem; }
+    h2 { font-family:'Lora',serif; font-size:1.75rem; font-weight:600; color:var(--navy); margin-bottom:2rem; line-height:1.2; }
+
+    /* ── About ── */
+    #about { background:var(--g50); }
+    .about-layout { display:grid; grid-template-columns:1fr 290px; gap:3rem; align-items:start; }
+    .about-bio { color:var(--g600); font-size:.975rem; line-height:1.78; }
+    .about-bio p + p { margin-top:.8rem; }
+    .info-card { background:#fff; border:1px solid var(--g200); border-radius:var(--r); padding:1.3rem; box-shadow:var(--sh); }
+    .info-row { display:flex; align-items:flex-start; gap:.65rem; padding:.45rem 0; border-bottom:1px solid var(--g100); }
+    .info-row:last-child { border-bottom:none; }
+    .info-icon { font-size:.9rem; flex-shrink:0; margin-top:.08rem; }
+    .info-lbl { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--g400); }
+    .info-val { font-size:.855rem; font-weight:500; color:var(--g800); line-height:1.35; margin-top:.06rem; }
+
+    /* ── Research ── */
+    #research { background:#fff; }
+    .rc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .rc {
+      background:var(--g50); border:1px solid var(--g200);
+      border-radius:var(--r); padding:1.3rem 1.2rem;
+      transition:box-shadow .2s,transform .2s,border-color .2s;
+    }
+    .rc:hover { box-shadow:var(--sh); transform:translateY(-2px); border-color:var(--teal2); }
+    .rc-icon { width:36px; height:36px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-bottom:.7rem; }
+    .rc h3 { font-size:.9rem; font-weight:600; color:var(--navy); margin-bottom:.3rem; line-height:1.3; }
+    .rc p { font-size:.815rem; color:var(--g500); line-height:1.6; }
+
+    /* ── Background ── */
+    #background { background:var(--g50); }
+    .tl { position:relative; padding-left:1.5rem; }
+    .tl::before { content:''; position:absolute; left:0; top:7px; bottom:0; width:2px; background:var(--g200); }
+    .tl-item { position:relative; margin-bottom:1.4rem; }
+    .tl-item:last-child { margin-bottom:0; }
+    .tl-dot {
+      position:absolute; left:-1.93rem; top:5px;
+      width:11px; height:11px; border-radius:50%;
+      background:var(--teal2); border:2px solid #fff; box-shadow:0 0 0 2px var(--teal2);
+    }
+    .tl-dot.past { background:#fff; box-shadow:0 0 0 2px var(--g400); }
+    .tl-period { font-size:.7rem; font-weight:700; color:var(--teal2); margin-bottom:.12rem; }
+    .tl-period.past { color:var(--g400); }
+    .tl-title { font-size:.9rem; font-weight:600; color:var(--navy); }
+    .tl-org { font-size:.81rem; color:var(--g500); margin-top:.1rem; }
+
+    /* ── Publications ── */
+    #publications { background:#fff; }
+    .pub-year-group { margin-bottom:2rem; }
+    .pub-year-group:last-child { margin-bottom:0; }
+    .year-badge {
+      display:inline-block; font-size:.75rem; font-weight:700;
+      background:var(--teal); color:#fff;
+      padding:.15rem .6rem; border-radius:6px; margin-bottom:.85rem;
+    }
+    .pub-list { display:flex; flex-direction:column; gap:.85rem; }
+    .pub {
+      background:var(--g50); border:1px solid var(--g200);
+      border-radius:var(--r); overflow:hidden;
+      display:flex; transition:box-shadow .18s;
+    }
+    .pub:hover { box-shadow:var(--sh); }
+    .pub-toc {
+      width:160px; flex-shrink:0;
+      background:var(--g100);
+      display:flex; align-items:center; justify-content:center;
+      border-right:1px solid var(--g200);
+      overflow:hidden;
+    }
+    .pub-toc img { width:100%; height:100%; object-fit:cover; display:block; }
+    .pub-toc-placeholder {
+      width:100%; height:100%; min-height:120px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.6rem; opacity:.35;
+    }
+    .pub-body { padding:1rem 1.2rem; flex:1; }
+    .pub-title { font-size:.9rem; font-weight:600; color:var(--navy); margin-bottom:.3rem; line-height:1.4; }
+    .pub-authors { font-size:.8rem; color:var(--g500); margin-bottom:.25rem; line-height:1.5; }
+    .pub-authors strong { color:var(--g800); font-weight:600; }
+    .pub-venue { font-size:.78rem; color:var(--g400); }
+    .pub-badge {
+      display:inline-block; font-size:.7rem; font-weight:600;
+      padding:.1rem .45rem; border-radius:5px; margin-left:.4rem;
+      vertical-align:middle;
+    }
+    .pub-doi { font-size:.75rem; margin-top:.4rem; }
+
+    /* ── Awards ── */
+    #awards { background:var(--g50); }
+    .awards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:.85rem; }
+    .award-card {
+      background:#fff; border:1px solid var(--g200); border-radius:var(--r);
+      padding:1rem 1.2rem; display:flex; gap:.85rem; align-items:flex-start;
+      transition:box-shadow .18s;
+    }
+    .award-card:hover { box-shadow:var(--sh); }
+    .award-year { font-size:.7rem; font-weight:700; color:var(--teal2); white-space:nowrap; padding-top:.12rem; min-width:30px; }
+    .award-title { font-size:.875rem; font-weight:600; color:var(--navy); margin-bottom:.15rem; line-height:1.3; }
+    .award-org { font-size:.78rem; color:var(--g500); }
+
+    /* ── Contact ── */
+    #contact { background:#fff; }
+    .contact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.75rem; }
+    .ci {
+      display:flex; align-items:center; gap:.8rem;
+      padding:.85rem 1rem; background:var(--g50);
+      border:1px solid var(--g200); border-radius:var(--r);
+      text-decoration:none; color:var(--g800);
+      transition:box-shadow .18s,border-color .18s;
+    }
+    .ci:hover { box-shadow:var(--sh); border-color:var(--teal2); text-decoration:none; }
+    .ci svg { width:17px; height:17px; flex-shrink:0; color:var(--g500); }
+    .ci-lbl { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--g400); }
+    .ci-val { font-size:.84rem; font-weight:500; color:var(--navy); margin-top:.04rem; }
+
+    /* ── Footer ── */
+    footer { background:var(--navy); color:rgba(255,255,255,.4); text-align:center; padding:1.6rem 2rem; font-size:.78rem; }
+    footer a { color:rgba(255,255,255,.6); }
+    footer a:hover { color:#fff; text-decoration:none; }
+
+    /* ── Responsive ── */
+    @media(max-width:860px){
+      .about-layout { grid-template-columns:1fr; gap:2rem; }
+      .rc-grid { grid-template-columns:1fr; }
+      .pub-toc { display:none; }
+    }
+    @media(max-width:600px){
+      .hero-inner { flex-direction:column; gap:1.5rem; text-align:center; }
+      .hero-text h1 { font-size:2rem; }
+      .hero-tags,.social-links { justify-content:center; }
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ico-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </symbol>
+  <symbol id="ico-linkedin" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="ico-bluesky" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-3.405 1.17-6.059-2.775-7.078a9.608 9.608 0 0 1-.314-.039c.14.017.279.036.414.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
+  </symbol>
+  <symbol id="ico-orcid" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.884-3.722h-2.285z"/>
+  </symbol>
+  <symbol id="ico-cv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+  </symbol>
+  <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.17 6.17l.96-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="ico-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+</svg>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Xiaocui Zheng</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#background">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-inner">
+    <img class="avatar" src="avatar.jpg" alt="Xiaocui Zheng" />
+    <div class="hero-text">
+      <h1>Xiaocui Zheng</h1>
+      <p class="hero-sub">Ph.D. Candidate in Chemical Biology &nbsp;·&nbsp; Xie Lab, Nanjing University</p>
+      <p class="hero-loc">📍 Nanjing, China</p>
+      <div class="hero-tags">
+        <span class="tag">Glycoenzyme Engineering</span>
+        <span class="tag">Precision Glycan Editing</span>
+        <span class="tag">Bioorthogonal Chemistry</span>
+        <span class="tag">Genetic Code Expansion</span>
+        <span class="tag">Chemical Biology</span>
+      </div>
+      <div class="social-links">
+        <a class="soc primary" href="mailto:zxc20190412@163.com">
+          <svg><use href="#ico-email"/></svg>Email
+        </a>
+        <a class="soc cv" href="Xiaocui Zheng-CV-20260605.docx" download>
+          <svg><use href="#ico-cv"/></svg>CV
+        </a>
+        <a class="soc" href="https://www.linkedin.com/in/%E5%B0%8F%E7%BF%A0-%E9%83%91-b25149262/" target="_blank" rel="noopener">
+          <svg><use href="#ico-linkedin"/></svg>LinkedIn
+        </a>
+        <a class="soc" href="https://bsky.app/profile/xiaocuizheng.bsky.social" target="_blank" rel="noopener">
+          <svg><use href="#ico-bluesky"/></svg>Bluesky
+        </a>
+        <a class="soc" href="https://orcid.org/0000-0003-4083-4440" target="_blank" rel="noopener">
+          <svg><use href="#ico-orcid"/></svg>ORCID
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h2>Glycan Biology × Chemical Tools</h2>
+    <div class="about-layout">
+      <div class="about-bio">
+        <p>
+          I am a Ph.D. candidate in Chemical Biology at <strong>Nanjing University</strong>, advised by
+          <strong>Prof. Ran Xie</strong>. My research develops precise chemical tools to control
+          cell-surface glycosylation in space and time, with applications ranging from fundamental
+          glycobiology to cancer immunotherapy.
+        </p>
+        <p>
+          My work has produced two first-author papers in <em>J. Am. Chem. Soc.</em>, including a
+          genetically encoded <strong>photoactivatable glycoenzyme platform</strong> for single-cell glycan
+          editing, and a <strong>traceless protein-selective labeling</strong> strategy that established the
+          "edit-and-leave" principle for accurate glycosylation biology.
+        </p>
+        <p>
+          In 2025, I was selected as one of <strong>30 PhD students nationwide</strong> to attend the
+          <strong>74th Lindau Nobel Laureate Meeting</strong> in Germany. I hold two competitive grants as
+          project leader, including a National Natural Science Foundation of China award.
+        </p>
+      </div>
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-icon">🏛️</span>
+          <div>
+            <div class="info-lbl">Institution</div>
+            <div class="info-val">Nanjing University<br><span style="color:var(--g500);font-size:.78rem">School of Chemistry and Chemical Engineering</span></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">👩‍🔬</span>
+          <div>
+            <div class="info-lbl">Supervisor</div>
+            <div class="info-val">Prof. Ran Xie</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🎓</span>
+          <div>
+            <div class="info-lbl">Degree</div>
+            <div class="info-val">Ph.D. Chemical Biology · 2020–2026</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🌐</span>
+          <div>
+            <div class="info-lbl">Languages</div>
+            <div class="info-val">Chinese (native) · English<br><span style="color:var(--g500);font-size:.78rem">IELTS 6.5 &nbsp;·&nbsp; CET-6: 546</span></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">✉️</span>
+          <div>
+            <div class="info-lbl">Email</div>
+            <div class="info-val"><a href="mailto:zxc20190412@163.com">zxc20190412@163.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Research -->
+<section id="research">
+  <div class="wrap">
+    <p class="eyebrow">PhD Research</p>
+    <h2>Research Focus</h2>
+    <div class="rc-grid">
+      <div class="rc">
+        <div class="rc-icon" style="background:#ccfbf1;">💡</div>
+        <h3>Photoactivatable Glycoenzyme Platform</h3>
+        <p>Site-specific incorporation of a photocaged unnatural amino acid (ONBY) into glycoenzymes via genetic code expansion, enabling &gt;80% activity recovery with 5 min UV irradiation. Extended to upconversion nanoparticle-assisted deep-tissue editing in vivo.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-icon" style="background:#d1fae5;">🎯</div>
+        <h3>Traceless Protein-Selective Labeling</h3>
+        <p>Dual-regulated editing platform (chemical inhibition + light-triggered release) using ligand–photocleavable linker–glycoenzyme conjugates. Established the "edit-and-leave" principle, revealing how prolonged enzyme residence perturbs target protein turnover and dimerization.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-icon" style="background:#e0f2fe;">🫀</div>
+        <h3>Cancer Immunotherapy Applications</h3>
+        <p>Precision glycoengineering tools for controlled modulation of immune checkpoints (PD-L1 and others) on cancer cell surfaces, offering new avenues for targeted cancer immunotherapy.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-icon" style="background:#fef3c7;">🔭</div>
+        <h3>Glycan Imaging & Visualization</h3>
+        <p>Development of spatiotemporally controlled strategies for visualizing and manipulating dynamic cell-surface glycans in living cells and animal models, enabling new insights into glycan function.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="background">
+  <div class="wrap">
+    <p class="eyebrow">Background</p>
+    <h2>Education</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Sep 2020 – Jun 2026</div>
+        <div class="tl-title">Ph.D. in Chemical Biology</div>
+        <div class="tl-org">Nanjing University · Xie Lab (Supervisor: Prof. Ran Xie)<br>
+          <span style="font-size:.78rem;color:var(--g400);font-style:italic">Thesis: Precise Editing of Proteins and Glycans via Glycoenzyme Engineering</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot past"></div>
+        <div class="tl-period past">Sep 2016 – Jun 2020</div>
+        <div class="tl-title">B.S. in Engineering Science</div>
+        <div class="tl-org">Northeast Forestry University · GPA 3.8 / 4.0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publications -->
+<section id="publications">
+  <div class="wrap">
+    <p class="eyebrow">Publications</p>
+    <h2>Selected Papers</h2>
+
+    <div class="pub-year-group">
+      <span class="year-badge">2026</span>
+      <div class="pub-list">
+        <div class="pub">
+          <div class="pub-toc">
+            <img src="toc-jacs2026.webp" alt="TOC" onerror="this.parentElement.innerHTML='<div class=pub-toc-placeholder>🧬</div>'" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">A Photoactivatable Glycoenzyme Platform for Spatiotemporally Controlled, Protein-Selective, and In Vivo Glycan Editing</div>
+            <div class="pub-authors">
+              <strong>Zheng, X.</strong>; Wei, W.; Wang, C.; Du, Y.; Yang, J.; Zhou, Y.; Liu, Y.; Liang, Y.; Ding, L.; Xie, R.*
+            </div>
+            <div class="pub-venue">
+              <em>J. Am. Chem. Soc.</em> 2026, 148 (10), 10990–11000.
+              <span class="pub-badge" style="background:#ccfbf1;color:#065f46">1st author</span>
+            </div>
+            <div class="pub-doi"><a href="https://doi.org/10.1021/jacs.5c00001" target="_blank" rel="noopener">DOI →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-year-group">
+      <span class="year-badge">2023</span>
+      <div class="pub-list">
+        <div class="pub">
+          <div class="pub-toc">
+            <img src="toc-jacs2023.webp" alt="TOC" onerror="this.parentElement.innerHTML='<div class=pub-toc-placeholder>🔗</div>'" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">Traceless Protein-Selective Glycan Labeling and Chemical Modification</div>
+            <div class="pub-authors">
+              <strong>Zheng, X.</strong>; Li, Y.; Cui, T.; Yang, J.; Meng, X.; Wang, H.; Chen, L.; He, J.; Chen, N.; Meng, L.*; Ding, L.*; Xie, R.*
+            </div>
+            <div class="pub-venue">
+              <em>J. Am. Chem. Soc.</em> 2023, 145 (43), 23670–23680.
+              <span class="pub-badge" style="background:#ccfbf1;color:#065f46">1st author</span>
+            </div>
+            <div class="pub-doi"><a href="https://doi.org/10.1021/jacs.3c08388" target="_blank" rel="noopener">DOI →</a></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-toc">
+            <img src="toc-chembiochem2023.webp" alt="TOC" onerror="this.parentElement.innerHTML='<div class=pub-toc-placeholder>📖</div>'" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">Recent Advances in Protein-Specific Glycan Imaging and Editing</div>
+            <div class="pub-authors">
+              <strong>Zheng, X.</strong>; He, B.; Meng, L.*; Xie, R.*
+            </div>
+            <div class="pub-venue">
+              <em>ChemBioChem</em> 2023, 24 (9), e202200778.
+              <span class="pub-badge" style="background:#dbeafe;color:#1e3a8a">Review · 1st author</span>
+            </div>
+            <div class="pub-doi"><a href="https://doi.org/10.1002/cbic.202200778" target="_blank" rel="noopener">DOI →</a></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-toc">
+            <div class="pub-toc-placeholder">🔬</div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">Site-Specific Introduction of Bioorthogonal Handles to Nanopores by Genetic Code Expansion</div>
+            <div class="pub-authors">
+              Yang, J.<sup>#</sup>; Wang, K.<sup>#</sup>; Zhang, S.; <strong>Zheng, X.</strong>; Cui, T.; Yang, X.; Liu, Y.; Lu, D.; Wang, Y.; Tian, X.; Zhang, P.; Huang, S.*; Xie, R.*
+            </div>
+            <div class="pub-venue">
+              <em>Angew. Chem. Int. Ed.</em> 2023, 62 (21), e202216115.
+              <span class="pub-badge" style="background:#fef3c7;color:#92400e">Co-author</span>
+            </div>
+            <div class="pub-doi"><a href="https://doi.org/10.1002/anie.202216115" target="_blank" rel="noopener">DOI →</a></div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-toc">
+            <div class="pub-toc-placeholder">🧫</div>
+          </div>
+          <div class="pub-body">
+            <div class="pub-title">An In-Situ-Tag-Generation Proximity Labeling Technology for Recording Cellular Interactions</div>
+            <div class="pub-authors">
+              Yao, Y.; Jia, R.; Liu, C.; Wang, H.; Li, T.; <strong>Zheng, X.</strong>; Zhong, T.; Feng, N.; Sun, J.; Li, K.; Xie, R.; Ding, L.; Yan, C.; Ding, L.*; Ju, H.
+            </div>
+            <div class="pub-venue">
+              <em>Angew. Chem. Int. Ed.</em> 2023, 63 (31), e202407109.
+              <span class="pub-badge" style="background:#fef3c7;color:#92400e">Co-author</span>
+            </div>
+            <div class="pub-doi"><a href="https://doi.org/10.1002/anie.202407109" target="_blank" rel="noopener">DOI →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;font-size:.82rem;color:var(--g400)">
+      Full list: <a href="https://orcid.org/0000-0003-4083-4440" target="_blank" rel="noopener">ORCID 0000-0003-4083-4440</a>
+    </p>
+  </div>
+</section>
+
+<!-- Awards & Recognition -->
+<section id="awards">
+  <div class="wrap">
+    <p class="eyebrow">Honors &amp; Awards</p>
+    <h2>Recognition</h2>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-year">2026</div>
+        <div>
+          <div class="award-title">Outstanding Graduates</div>
+          <div class="award-org">Nanjing University</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2026</div>
+        <div>
+          <div class="award-title">Best Poster Award</div>
+          <div class="award-org">Nanjing University — 6th Interdisciplinary Doctoral Forum</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2026</div>
+        <div>
+          <div class="award-title">"Glycoscience &amp; Therapy" Outstanding Poster</div>
+          <div class="award-org">Northeast University</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-title">Lindau Scholar</div>
+          <div class="award-org">74th Nobel Laureate Meeting · 1 of 30 nationwide</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2023</div>
+        <div>
+          <div class="award-title">National Scholarship</div>
+          <div class="award-org">Ministry of Education</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2023</div>
+        <div>
+          <div class="award-title">Outstanding Postgraduate Pacesetter</div>
+          <div class="award-org">Nanjing University</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2023</div>
+        <div>
+          <div class="award-title">First Prize — Oral Presentation</div>
+          <div class="award-org">Tang Aoqing Doctoral Forum, Jilin University</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grants -->
+    <p class="eyebrow" style="margin-top:2.8rem;">Research Grants</p>
+    <div class="tl" style="margin-top:1.1rem;">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">2025 – 2026</div>
+        <div class="tl-title">Nanjing University Doctoral Innovation Leadership Project</div>
+        <div class="tl-org">Project Leader</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot past"></div>
+        <div class="tl-period past">2024 – 2025</div>
+        <div class="tl-title">NSFC Young Students Basic Research Project</div>
+        <div class="tl-org">National Natural Science Foundation of China · Project Leader</div>
+      </div>
+    </div>
+
+    <!-- Conferences -->
+    <p class="eyebrow" style="margin-top:2.8rem;">Selected Conferences</p>
+    <div class="tl" style="margin-top:1.1rem;">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">2026 · Hong Kong</div>
+        <div class="tl-title">2nd International Symposium on Chemical &amp; Biomedical Imaging</div>
+        <div class="tl-org">Poster</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">2026 · Shenyang</div>
+        <div class="tl-title">7th National Youth Forum on Glycoscience</div>
+        <div class="tl-org">Poster</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot past"></div>
+        <div class="tl-period past">2025 · Lindau, Germany</div>
+        <div class="tl-title">74th Lindau Nobel Laureate Meeting</div>
+        <div class="tl-org">Invited — 1 of 30 PhD students selected nationwide</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot past"></div>
+        <div class="tl-period past">2024 · Shanghai</div>
+        <div class="tl-title">31st International Carbohydrate Symposium</div>
+        <div class="tl-org">Poster</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot past"></div>
+        <div class="tl-period past">2023 · Beijing</div>
+        <div class="tl-title">PKU Graduate Forum on Chemical Biology</div>
+        <div class="tl-org">Oral</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot past"></div>
+        <div class="tl-period past">2023 · Changchun</div>
+        <div class="tl-title">Tang Aoqing Doctoral Forum</div>
+        <div class="tl-org">Oral · First Prize</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in Touch</h2>
+    <div class="contact-grid">
+      <a class="ci" href="mailto:zxc20190412@163.com">
+        <svg><use href="#ico-email"/></svg>
+        <div><div class="ci-lbl">Email</div><div class="ci-val">zxc20190412@163.com</div></div>
+      </a>
+      <a class="ci" href="https://www.linkedin.com/in/%E5%B0%8F%E7%BF%A0-%E9%83%91-b25149262/" target="_blank" rel="noopener">
+        <svg><use href="#ico-linkedin"/></svg>
+        <div><div class="ci-lbl">LinkedIn</div><div class="ci-val">郑小翠</div></div>
+      </a>
+      <a class="ci" href="https://bsky.app/profile/xiaocuizheng.bsky.social" target="_blank" rel="noopener">
+        <svg><use href="#ico-bluesky"/></svg>
+        <div><div class="ci-lbl">Bluesky</div><div class="ci-val">@xiaocuizheng.bsky.social</div></div>
+      </a>
+      <a class="ci" href="https://orcid.org/0000-0003-4083-4440" target="_blank" rel="noopener">
+        <svg><use href="#ico-orcid"/></svg>
+        <div><div class="ci-lbl">ORCID</div><div class="ci-val">0000-0003-4083-4440</div></div>
+      </a>
+      <a class="ci" href="Xiaocui Zheng-CV-20260605.docx" download>
+        <svg><use href="#ico-cv"/></svg>
+        <div><div class="ci-lbl">Curriculum Vitae</div><div class="ci-val">Download CV (PDF)</div></div>
+      </a>
+      <div class="ci" style="cursor:default;">
+        <svg><use href="#ico-location"/></svg>
+        <div><div class="ci-lbl">Location</div><div class="ci-val">Nanjing University, Nanjing, China</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Xiaocui Zheng &nbsp;·&nbsp; Xie Lab, Nanjing University &nbsp;·&nbsp;
+    <a href="https://orcid.org/0000-0003-4083-4440" target="_blank" rel="noopener">ORCID</a>
+  </p>
+</footer>
+
+</body>
+</html>
