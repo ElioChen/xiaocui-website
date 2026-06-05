@@ -139,24 +139,10 @@
     .pub-list { display:flex; flex-direction:column; gap:.85rem; }
     .pub {
       background:var(--g50); border:1px solid var(--g200);
-      border-radius:var(--r); overflow:hidden;
-      display:flex; transition:box-shadow .18s;
+      border-radius:var(--r); padding:1rem 1.25rem;
+      transition:box-shadow .18s;
     }
     .pub:hover { box-shadow:var(--sh); }
-    .pub-toc {
-      width:160px; flex-shrink:0;
-      background:var(--g100);
-      display:flex; align-items:center; justify-content:center;
-      border-right:1px solid var(--g200);
-      overflow:hidden;
-    }
-    .pub-toc img { width:100%; height:100%; object-fit:cover; display:block; }
-    .pub-toc-placeholder {
-      width:100%; height:100%; min-height:120px;
-      display:flex; align-items:center; justify-content:center;
-      font-size:1.6rem; opacity:.35;
-    }
-    .pub-body { padding:1rem 1.2rem; flex:1; }
     .pub-title { font-size:.9rem; font-weight:600; color:var(--navy); margin-bottom:.3rem; line-height:1.4; }
     .pub-authors { font-size:.8rem; color:var(--g500); margin-bottom:.25rem; line-height:1.5; }
     .pub-authors strong { color:var(--g800); font-weight:600; }
@@ -205,7 +191,6 @@
     @media(max-width:860px){
       .about-layout { grid-template-columns:1fr; gap:2rem; }
       .rc-grid { grid-template-columns:1fr; }
-      .pub-toc { display:none; }
     }
     @media(max-width:600px){
       .hero-inner { flex-direction:column; gap:1.5rem; text-align:center; }
@@ -423,20 +408,15 @@
       <span class="year-badge">2026</span>
       <div class="pub-list">
         <div class="pub">
-          <div class="pub-toc">
-            <img src="toc-jacs2026.webp" alt="TOC" onerror="this.parentElement.innerHTML='<div class=pub-toc-placeholder>🧬</div>'" />
+          <div class="pub-title">A Photoactivatable Glycoenzyme Platform for Spatiotemporally Controlled, Protein-Selective, and In Vivo Glycan Editing</div>
+          <div class="pub-authors">
+            <strong>Zheng, X.</strong>; Wei, W.; Wang, C.; Du, Y.; Yang, J.; Zhou, Y.; Liu, Y.; Liang, Y.; Ding, L.; Xie, R.*
           </div>
-          <div class="pub-body">
-            <div class="pub-title">A Photoactivatable Glycoenzyme Platform for Spatiotemporally Controlled, Protein-Selective, and In Vivo Glycan Editing</div>
-            <div class="pub-authors">
-              <strong>Zheng, X.</strong>; Wei, W.; Wang, C.; Du, Y.; Yang, J.; Zhou, Y.; Liu, Y.; Liang, Y.; Ding, L.; Xie, R.*
-            </div>
-            <div class="pub-venue">
-              <em>J. Am. Chem. Soc.</em> 2026, 148 (10), 10990–11000.
-              <span class="pub-badge" style="background:#ccfbf1;color:#065f46">1st author</span>
-            </div>
-            <div class="pub-doi"><a href="https://doi.org/10.1021/jacs.5c00001" target="_blank" rel="noopener">DOI →</a></div>
+          <div class="pub-venue">
+            <em>J. Am. Chem. Soc.</em> 2026, 148 (10), 10990–11000.
+            <span class="pub-badge" style="background:#ccfbf1;color:#065f46">1st author</span>
           </div>
+          <div class="pub-doi"><a href="https://doi.org/10.1021/jacs.5c01298" target="_blank" rel="noopener">DOI →</a></div>
         </div>
       </div>
     </div>
@@ -445,68 +425,48 @@
       <span class="year-badge">2023</span>
       <div class="pub-list">
         <div class="pub">
-          <div class="pub-toc">
-            <img src="toc-jacs2023.webp" alt="TOC" onerror="this.parentElement.innerHTML='<div class=pub-toc-placeholder>🔗</div>'" />
+          <div class="pub-title">Traceless Protein-Selective Glycan Labeling and Chemical Modification</div>
+          <div class="pub-authors">
+            <strong>Zheng, X.</strong>; Li, Y.; Cui, T.; Yang, J.; Meng, X.; Wang, H.; Chen, L.; He, J.; Chen, N.; Meng, L.*; Ding, L.*; Xie, R.*
           </div>
-          <div class="pub-body">
-            <div class="pub-title">Traceless Protein-Selective Glycan Labeling and Chemical Modification</div>
-            <div class="pub-authors">
-              <strong>Zheng, X.</strong>; Li, Y.; Cui, T.; Yang, J.; Meng, X.; Wang, H.; Chen, L.; He, J.; Chen, N.; Meng, L.*; Ding, L.*; Xie, R.*
-            </div>
-            <div class="pub-venue">
-              <em>J. Am. Chem. Soc.</em> 2023, 145 (43), 23670–23680.
-              <span class="pub-badge" style="background:#ccfbf1;color:#065f46">1st author</span>
-            </div>
-            <div class="pub-doi"><a href="https://doi.org/10.1021/jacs.3c08388" target="_blank" rel="noopener">DOI →</a></div>
+          <div class="pub-venue">
+            <em>J. Am. Chem. Soc.</em> 2023, 145 (43), 23670–23680.
+            <span class="pub-badge" style="background:#ccfbf1;color:#065f46">1st author</span>
           </div>
+          <div class="pub-doi"><a href="https://doi.org/10.1021/jacs.3c08388" target="_blank" rel="noopener">DOI →</a></div>
         </div>
         <div class="pub">
-          <div class="pub-toc">
-            <img src="toc-chembiochem2023.webp" alt="TOC" onerror="this.parentElement.innerHTML='<div class=pub-toc-placeholder>📖</div>'" />
+          <div class="pub-title">Recent Advances in Protein-Specific Glycan Imaging and Editing</div>
+          <div class="pub-authors">
+            <strong>Zheng, X.</strong>; He, B.; Meng, L.*; Xie, R.*
           </div>
-          <div class="pub-body">
-            <div class="pub-title">Recent Advances in Protein-Specific Glycan Imaging and Editing</div>
-            <div class="pub-authors">
-              <strong>Zheng, X.</strong>; He, B.; Meng, L.*; Xie, R.*
-            </div>
-            <div class="pub-venue">
-              <em>ChemBioChem</em> 2023, 24 (9), e202200778.
-              <span class="pub-badge" style="background:#dbeafe;color:#1e3a8a">Review · 1st author</span>
-            </div>
-            <div class="pub-doi"><a href="https://doi.org/10.1002/cbic.202200778" target="_blank" rel="noopener">DOI →</a></div>
+          <div class="pub-venue">
+            <em>ChemBioChem</em> 2023, 24 (9), e202200778.
+            <span class="pub-badge" style="background:#dbeafe;color:#1e3a8a">Review · 1st author</span>
           </div>
+          <div class="pub-doi"><a href="https://doi.org/10.1002/cbic.202200778" target="_blank" rel="noopener">DOI →</a></div>
         </div>
         <div class="pub">
-          <div class="pub-toc">
-            <div class="pub-toc-placeholder">🔬</div>
+          <div class="pub-title">Site-Specific Introduction of Bioorthogonal Handles to Nanopores by Genetic Code Expansion</div>
+          <div class="pub-authors">
+            Yang, J.<sup>#</sup>; Wang, K.<sup>#</sup>; Zhang, S.; <strong>Zheng, X.</strong>; Cui, T.; Yang, X.; Liu, Y.; Lu, D.; Wang, Y.; Tian, X.; Zhang, P.; Huang, S.*; Xie, R.*
           </div>
-          <div class="pub-body">
-            <div class="pub-title">Site-Specific Introduction of Bioorthogonal Handles to Nanopores by Genetic Code Expansion</div>
-            <div class="pub-authors">
-              Yang, J.<sup>#</sup>; Wang, K.<sup>#</sup>; Zhang, S.; <strong>Zheng, X.</strong>; Cui, T.; Yang, X.; Liu, Y.; Lu, D.; Wang, Y.; Tian, X.; Zhang, P.; Huang, S.*; Xie, R.*
-            </div>
-            <div class="pub-venue">
-              <em>Angew. Chem. Int. Ed.</em> 2023, 62 (21), e202216115.
-              <span class="pub-badge" style="background:#fef3c7;color:#92400e">Co-author</span>
-            </div>
-            <div class="pub-doi"><a href="https://doi.org/10.1002/anie.202216115" target="_blank" rel="noopener">DOI →</a></div>
+          <div class="pub-venue">
+            <em>Angew. Chem. Int. Ed.</em> 2023, 62 (21), e202216115.
+            <span class="pub-badge" style="background:#fef3c7;color:#92400e">Co-author</span>
           </div>
+          <div class="pub-doi"><a href="https://doi.org/10.1002/anie.202216115" target="_blank" rel="noopener">DOI →</a></div>
         </div>
         <div class="pub">
-          <div class="pub-toc">
-            <div class="pub-toc-placeholder">🧫</div>
+          <div class="pub-title">An In-Situ-Tag-Generation Proximity Labeling Technology for Recording Cellular Interactions</div>
+          <div class="pub-authors">
+            Yao, Y.; Jia, R.; Liu, C.; Wang, H.; Li, T.; <strong>Zheng, X.</strong>; Zhong, T.; Feng, N.; Sun, J.; Li, K.; Xie, R.; Ding, L.; Yan, C.; Ding, L.*; Ju, H.
           </div>
-          <div class="pub-body">
-            <div class="pub-title">An In-Situ-Tag-Generation Proximity Labeling Technology for Recording Cellular Interactions</div>
-            <div class="pub-authors">
-              Yao, Y.; Jia, R.; Liu, C.; Wang, H.; Li, T.; <strong>Zheng, X.</strong>; Zhong, T.; Feng, N.; Sun, J.; Li, K.; Xie, R.; Ding, L.; Yan, C.; Ding, L.*; Ju, H.
-            </div>
-            <div class="pub-venue">
-              <em>Angew. Chem. Int. Ed.</em> 2023, 63 (31), e202407109.
-              <span class="pub-badge" style="background:#fef3c7;color:#92400e">Co-author</span>
-            </div>
-            <div class="pub-doi"><a href="https://doi.org/10.1002/anie.202407109" target="_blank" rel="noopener">DOI →</a></div>
+          <div class="pub-venue">
+            <em>Angew. Chem. Int. Ed.</em> 2023, 63 (31), e202407109.
+            <span class="pub-badge" style="background:#fef3c7;color:#92400e">Co-author</span>
           </div>
+          <div class="pub-doi"><a href="https://doi.org/10.1002/anie.202407109" target="_blank" rel="noopener">DOI →</a></div>
         </div>
       </div>
     </div>
