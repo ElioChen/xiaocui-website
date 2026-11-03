@@ -31,7 +31,7 @@ Single-page static HTML — no build tools or frameworks required. Deployed via 
 xiaocui-website/
 ├── index.html                     # Main page (edit this to update content)
 ├── avatar.jpg                     # Profile photo
-├── Xiaocui Zheng-CV-20260605.pdf  # CV download (PDF)
+├── Xiaocui Zheng-CV-20261103.pdf  # CV download (PDF)
 └── README.md
 ```
 
@@ -43,7 +43,7 @@ All content lives in `index.html`. Common updates:
 
 **Add a new publication** — find the nearest `<div class="pub-year-group">` block and copy a `<div class="pub">` card. Update the year badge if needed.
 
-**Update the CV** — replace `Xiaocui Zheng-CV-20260605.docx` with the new file, then update the filename in the two `href="..."` attributes referencing it in `index.html`.
+**Update the CV** — replace `Xiaocui Zheng-CV-20261103.docx` with the new file, then update the filename in the two `href="..."` attributes referencing it in `index.html`.
 
 **Change the profile photo** — replace `avatar.jpg` (keep the same filename, or update the `src` in the `<img class="avatar">` tag).
 
