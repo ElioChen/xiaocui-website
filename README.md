@@ -1,6 +1,6 @@
 # Xiaocui Zheng, Ph.D. — Personal Academic Website
 
-Personal academic website for **Dr. Xiaocui Zheng (郑小翠)**, Ph.D. in Chemical Biology (Nanjing University, 2026). Currently seeking postdoctoral positions.
+Personal academic website for **Dr. Xiaocui Zheng (郑小翠)**, Ph.D. in Chemical Biology (Nanjing University, 2026). Currently a postdoctoral researcher at Utrecht University (the Netherlands).
 
 **Live site:** https://eliochen.github.io/xiaocui-website/
 
@@ -8,12 +8,10 @@ Personal academic website for **Dr. Xiaocui Zheng (郑小翠)**, Ph.D. in Chemic
 
 ## About
 
-Xiaocui's research focuses on glycoenzyme engineering and precise chemical tools for spatiotemporal control of cell-surface glycan modifications. She is a member of the [Xie Lab](https://www.nju.edu.cn/) at Nanjing University, advised by Prof. Ran Xie.
+Xiaocui's research focuses on glycoenzyme engineering and precise chemical tools for spatiotemporal control of cell-surface glycan modifications. She completed her Ph.D. in the Xie Lab at Nanjing University (advisor: Prof. Ran Xie) and has since joined Utrecht University as a postdoc (supervisor: Dr. Zeshi Li).
 
 - ORCID: [0000-0003-4083-4440](https://orcid.org/0000-0003-4083-4440)
-- LinkedIn: [郑小翠](https://www.linkedin.com/in/%E5%B0%8F%E7%BF%A0-%E9%83%91-b25149262/)
-- Bluesky: [@xiaocuizheng.bsky.social](https://bsky.app/profile/xiaocuizheng.bsky.social)
-- Email: zxc20190412@163.com
+- Email: x.zheng@uu.nl
 
 ---
 
@@ -23,7 +21,7 @@ Single-page static HTML — no build tools or frameworks required. Deployed via 
 
 - **Font:** Inter (body) + Lora (headings) via Google Fonts
 - **Colors:** Teal/navy academic palette
-- **Sections:** About · Research · Education · Publications · Awards & Conferences · Contact
+- **Sections:** About · Research · Career & Education · Publications · Awards & Conferences · Contact
 
 ---
 
@@ -33,7 +31,7 @@ Single-page static HTML — no build tools or frameworks required. Deployed via 
 xiaocui-website/
 ├── index.html                     # Main page (edit this to update content)
 ├── avatar.jpg                     # Profile photo
-├── Xiaocui Zheng-CV-20260605.pdf  # CV download (PDF)
+├── Xiaocui Zheng-CV-20261103.pdf  # CV download (PDF)
 └── README.md
 ```
 
@@ -45,7 +43,7 @@ All content lives in `index.html`. Common updates:
 
 **Add a new publication** — find the nearest `<div class="pub-year-group">` block and copy a `<div class="pub">` card. Update the year badge if needed.
 
-**Update the CV** — replace `Xiaocui Zheng-CV-20260605.docx` with the new file, then update the filename in the two `href="..."` attributes referencing it in `index.html`.
+**Update the CV** — replace `Xiaocui Zheng-CV-20261103.docx` with the new file, then update the filename in the two `href="..."` attributes referencing it in `index.html`.
 
 **Change the profile photo** — replace `avatar.jpg` (keep the same filename, or update the `src` in the `<img class="avatar">` tag).
 
